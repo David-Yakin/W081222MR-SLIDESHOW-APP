@@ -12,3 +12,8 @@ export const ABOUT_PAGE_LINK = document.getElementById("about-page-link");
 export const CREATE_PIC_PAGE_LINK = document.getElementById("create-pic-link");
 export const SIGNUP_PAGE_LINK = document.getElementById("signup-page-link");
 export const LOGIN_PAGE_LINK = document.getElementById("login-page-link");
+
+/***** links *****/
+export const RETURN_TO_HOME_PAGE_LINK = document.getElementById(
+  "return-to-home-page-link"
+);
