@@ -1,4 +1,4 @@
-import PAGES from "../models/pageModel.js";
+import PAGES from "./pageModel.js";
 import {
   ABOUT_PAGE_LINK,
   CREATE_PIC_PAGE_LINK,
