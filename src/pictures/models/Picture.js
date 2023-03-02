@@ -1,4 +1,4 @@
-import { randomNumBetween } from "../../utils/algoMethods.js";
+import { generateUniqId } from "../../utils/algoMethods.js";
 
 class Picture {
   #id;
@@ -16,7 +16,7 @@ class Picture {
     if (!url || !alt || !credits || !price || !user_id)
       throw new Error("Bad Request!");
 
-    this.#id = this.generateId(pictures);
+    this.#id = generateUniqId(pictures, 1_000_000, 9_999_999);
     this.url = url;
     this.alt = alt;
     this.credits = credits;
@@ -24,16 +24,6 @@ class Picture {
     this.category = category || "";
     this.#user_id = user_id;
     this.#createdAt = new Date();
-  }
-
-  generateId(arrayOfPictures) {
-    if (arrayOfPictures.length >= 8_999_999)
-      throw new Error("max pics in array!");
-
-    const randomNumber = randomNumBetween(1_000_000, 9_999_999);
-    const pic = arrayOfPictures.findIndex(pic => pic._id === randomNumber);
-    if (pic === -1) return randomNumber;
-    this.generateId(arrayOfPictures);
   }
 
   get _id() {
@@ -60,7 +50,7 @@ class Picture {
 //     credits: "xx",
 //     price: 5_000,
 //     user_id: "ddd545d",
-//     // category: "school",
+//     category: "school",
 //   });
 
 //   console.log(pic);

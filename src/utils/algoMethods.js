@@ -17,3 +17,14 @@ export const makeEveryFirstLetterCapital = text => {
 export const randomNumBetween = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+export const generateUniqId = (array, min, max) => {
+  if (array.length >= max - min)
+    throw new Error("you reached max items in the array!");
+  if (min >= max) throw new Error("min number must be lower then max number");
+
+  const randomNumber = randomNumBetween(min, max);
+  const item = array.findIndex(item => item._id === randomNumber);
+  if (item === -1) return randomNumber + new Date().toLocaleTimeString();
+  this.generateId(array);
+};
