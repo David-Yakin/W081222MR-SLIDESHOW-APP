@@ -93,20 +93,25 @@ class User {
     this.#isBusiness = !this.#isBusiness;
   }
 
-  update(user, users) {
+  static findOneAndUpdate(user, users) {
     if (typeof user !== "object") throw new Error("Please enter a valid user!");
-    if (user._id !== this.#id)
-      throw new Error("Only the registered user can edit his info!");
+    if (Array.isArray(users) !== true || !users.length)
+      throw new Error("Please enter array of users");
+
+    const userInArray = users.find(item => item._id === user._id);
+    if (!userInArray) throw new Error("this user in not in the database!");
+
     const { address, phone, name, email, isBusiness } = user;
-    this.#name = this.setName(name);
-    this.#address = this.checkAddress(address);
-    this.#phone = this.checkPhone(phone);
+    userInArray.#name = userInArray.setName(name);
+    userInArray.#address = userInArray.checkAddress(address);
+    userInArray.#phone = userInArray.checkPhone(phone);
+    userInArray.#email =
+      email === userInArray.#email
+        ? userInArray.#email
+        : userInArray.checkUniqEmail(email, users);
+    userInArray.#isBusiness = isBusiness ? isBusiness : userInArray.#isBusiness;
 
-    this.#email =
-      email === this.#email ? this.#email : this.checkUniqEmail(email, users);
-
-    this.#isBusiness = isBusiness ? isBusiness : this.#isBusiness;
-    return this;
+    return users;
   }
 
   changePassword() {}
@@ -157,30 +162,65 @@ export default User;
 //   },
 // };
 
-// const array = [test];
+// try {
+//   const user = new User(test);
+
+//   const userToUpdate = {
+//     _id: user._id,
+//     name: { first: "shula", last: "zaken" },
+//     phone: "054-9999999",
+//     address: {
+//       state: "",
+//       country: "israel",
+//       city: "tel-aviv",
+//       street: "shoham",
+//       houseNumber: 5,
+//       zip: 123456,
+//     },
+//     email: "walla@gmail.co.il",
+//   };
+
+//   const array = [user];
+//   User.findOneAndUpdate(userToUpdate, array);
+
+//   console.log(array);
+// } catch (error) {
+//   console.log(error.message);
+// }
 
 // try {
 //   const user = new User(test);
 //   user.changeBizStatus(user);
 
 //   user.update(
-//     {
-//       _id: user._id,
-//       name: { first: "shula", last: "zaken" },
-//       phone: "054-9999999",
-//       address: {
-//         state: "",
-//         country: "israel",
-//         city: "tel-aviv",
-//         street: "shoham",
-//         houseNumber: 5,
-//         zip: 123456,
-//       },
-//       email: "walla@gmail.co.il",
-//     },
-//     array
+// {
+//   _id: user._id,
+//   name: { first: "shula", last: "zaken" },
+//   phone: "054-9999999",
+//   address: {
+//     state: "",
+//     country: "israel",
+//     city: "tel-aviv",
+//     street: "shoham",
+//     houseNumber: 5,
+//     zip: 123456,
+//   },
+//   email: "walla@gmail.co.il",
+// },
+// array
 //   );
 //   console.log(user);
 // } catch (error) {
 //   console.log(error.message);
 // }
+
+// const array = ["one", "two", "three"];
+// const obj = {};
+
+// const testIsArray = arrayFromClient => {
+//   console.log(typeof arrayFromClient);
+//   console.log(Array.isArray(arrayFromClient));
+// };
+
+// testIsArray(array);
+// testIsArray(obj);
