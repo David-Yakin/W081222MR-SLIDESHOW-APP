@@ -145,20 +145,20 @@ class User {
 export default User;
 
 // const test = {
-//   email: "test@gmail.co.il",
+//   email: "regular@gmail.co.il",
 //   password: "Aa1234!",
 //   address: {
 //     state: "usa",
 //     country: "new-york",
 //     city: "new-york",
-//     street: "brodway",
+//     street: "broadway",
 //     houseNumber: 5,
 //     zip: 123456,
 //   },
 //   phone: "050-0000000",
 //   name: {
-//     first: "david",
-//     last: "yakin",
+//     first: "regular",
+//     last: "user",
 //   },
 // };
 

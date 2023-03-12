@@ -23,3 +23,30 @@ export const SLIDER_IMAGE = document.getElementById("slider-image");
 export const SLIDER_CREDITS = document.getElementById("slider-credits");
 export const SLIDER_PREV_BTN = document.getElementById("slider-prev-btn");
 export const SLIDER_NEXT_BTN = document.getElementById("slider-next-btn");
+
+/***** create new picture *****/
+export const CREATE_PIC_URL_FIELD = document.getElementById("create-pic-url");
+export const CREATE_PIC_URL_ERROR = document.getElementById(
+  "create-pic-url-error"
+);
+export const CREATE_PIC_ALT_FIELD = document.getElementById("create-pic-alt");
+export const CREATE_PIC_ALT_ERROR = document.getElementById(
+  "create-pic-alt-error"
+);
+export const CREATE_PIC_CREDITS_FIELD =
+  document.getElementById("create-pic-credits");
+export const CREATE_PIC_CREDITS_ERROR = document.getElementById(
+  "create-pic-credits-error"
+);
+export const CREATE_PIC_PRICE_FIELD =
+  document.getElementById("create-pic-price");
+export const CREATE_PIC_PRICE_ERROR = document.getElementById(
+  "create-pic-price-error"
+);
+
+export const CREATE_PIC_CANCEL_BTN = document.getElementById(
+  "create-pic-cancel-btn"
+);
+export const CREATE_PIC_SUBMIT_BTN = document.getElementById(
+  "create-pic-submit-btn"
+);

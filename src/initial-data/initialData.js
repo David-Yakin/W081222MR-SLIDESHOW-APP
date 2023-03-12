@@ -1,4 +1,5 @@
 import Picture from "../pictures/models/Picture.js";
+import User from "../users/models/User.js";
 
 const initialData = () => {
   const database = {
@@ -25,7 +26,59 @@ const initialData = () => {
         user_id: "123456",
       },
     ],
-    users: [],
+    users: [
+      // {
+      //   email: "regular@gmail.com",
+      //   password: "Aa1234!",
+      //   address: {
+      //     state: "usa",
+      //     country: "new-york",
+      //     city: "new-york",
+      //     street: "broadway",
+      //     houseNumber: 5,
+      //     zip: 123456,
+      //   },
+      //   phone: "050-0000000",
+      //   name: {
+      //     first: "regular",
+      //     last: "user",
+      //   },
+      // },
+      // {
+      //   email: "business@gmail.com",
+      //   password: "Aa1234!",
+      //   address: {
+      //     state: "",
+      //     country: "israel",
+      //     city: "tel-aviv",
+      //     street: "shoham",
+      //     houseNumber: 5,
+      //     zip: 123456,
+      //   },
+      //   phone: "050-0000000",
+      //   name: {
+      //     first: "business",
+      //     last: "user",
+      //   },
+      // },
+      // {
+      //   email: "admin@gmail.com",
+      //   password: "Aa1234!",
+      //   address: {
+      //     state: "usa",
+      //     country: "new-york",
+      //     city: "new-york",
+      //     street: "broadway",
+      //     houseNumber: 5,
+      //     zip: 123456,
+      //   },
+      //   phone: "050-0000000",
+      //   name: {
+      //     first: "admin",
+      //     last: "user",
+      //   },
+      // },
+    ],
   };
 
   try {
@@ -34,6 +87,10 @@ const initialData = () => {
     });
 
     const users = null;
+    // const users = database.users.map(user => {
+    //   return new User(user, []);
+    // });
+
     return { pictures, users };
   } catch (error) {
     console.log(error.message);
