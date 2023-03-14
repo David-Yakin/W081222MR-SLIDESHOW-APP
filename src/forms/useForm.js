@@ -13,7 +13,7 @@ const useForm = (initialForm, schema, handleSubmit) => {
       return errors.length ? errors[0] : null;
     }
 
-    const { errors } = new Validation(value)[schema[name]]();
+    const { errors } = Validation.validate(value)[schema[name]]();
     return errors.length ? errors[0] : null;
   };
 
@@ -40,6 +40,7 @@ const useForm = (initialForm, schema, handleSubmit) => {
 
   /********** handle button disabled **********/
   const handleDisableSubmitBtn = () => {
+    console.log(data);
     const errorArray = Object.keys(errors);
     const array = Object.keys(data);
     const dataArray = array.filter(key => !data[key]);

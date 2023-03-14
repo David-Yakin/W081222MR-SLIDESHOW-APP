@@ -50,3 +50,15 @@ export const CREATE_PIC_CANCEL_BTN = document.getElementById(
 export const CREATE_PIC_SUBMIT_BTN = document.getElementById(
   "create-pic-submit-btn"
 );
+
+/***** login *****/
+export const LOGIN_EMAIL_FIELD = document.getElementById("login-email-field");
+export const LOGIN_EMAIL_ERROR = document.getElementById("login-email-error");
+export const LOGIN_PASSWORD_FIELD = document.getElementById(
+  "login-password-field"
+);
+export const LOGIN_PASSWORD_ERROR = document.getElementById(
+  "login-password-error"
+);
+
+export const LOGIN_SUBMIT_BTN = document.getElementById("login-submit-btn");

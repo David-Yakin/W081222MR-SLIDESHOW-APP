@@ -1,9 +1,9 @@
-export const onReset = (inputsArray, errorsArray, handleReset) => {
+export const onReset = (inputsElArray, errorsElArray, handleReset) => {
   handleReset();
-  inputsArray.map(input => {
+  inputsElArray.map(input => {
     input.value = "";
   });
-  errorsArray.map(err => {
+  errorsElArray.map(err => {
     err.innerHTML = "";
   });
 };

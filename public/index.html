@@ -249,15 +249,46 @@
       <!-- login page -->
       <div id="login-page" class="d-none">
         <div class="container">
-          <div class="center">
-            <div class="col-12 col-md-10 col-xl-8">
-              <h1 class="display-4">LOGIN PAGE</h1>
-              <h2 class="fs-5">Here you can look at your pictures...</h2>
-              <hr />
-            </div>
-          </div>
+          <div class="center" style="min-height: 87vh">
+            <form
+              class="form col-12 col-md-10 col-xl-8 p-2 rounded border"
+              style="max-width: 450px"
+            >
+              <h1 class="text-center fs-5">LOGIN</h1>
 
-          <p>about page content</p>
+              <div>
+                <label for="login-email-field">email</label>
+                <input
+                  class="form-control mb-2"
+                  type="email"
+                  name="email"
+                  id="login-email-field"
+                  autocomplete="off"
+                />
+                <span id="login-email-error" class="text-danger"></span>
+              </div>
+
+              <div>
+                <label for="login-password-field">password</label>
+                <input
+                  class="form-control mb-2"
+                  type="password"
+                  name="password"
+                  id="login-password-field"
+                  autocomplete="off"
+                />
+                <span id="login-password-error" class="text-danger mb-1"></span>
+              </div>
+
+              <input
+                id="login-submit-btn"
+                type="button"
+                value="Submit"
+                class="btn btn-primary col-12 mb-2"
+                disabled
+              />
+            </form>
+          </div>
         </div>
       </div>
 
