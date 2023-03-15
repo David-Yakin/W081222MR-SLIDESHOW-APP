@@ -19,7 +19,7 @@ import INITIAL_CREATE_PIC_FORM from "../helpers/initialForms/initial_create_pic_
 import Picture from "../models/Picture.js";
 import CREATE_PIC_SCHEMA from "../models/schema/create_pic_schema.js";
 
-const pictureService = () => {
+export const createPicture = () => {
   /* array of inputs elements */
   const INPUTS_ARRAY = [
     CREATE_PIC_URL_FIELD,
@@ -99,5 +99,3 @@ const pictureService = () => {
   );
   CREATE_PIC_SUBMIT_BTN.addEventListener("click", rest.onSubmit);
 };
-
-export default pictureService;

@@ -8,7 +8,7 @@ import {
 } from "../../services/domService.js";
 import useForm from "./../../forms/useForm.js";
 
-const userService = () => {
+export const login = () => {
   const INITIAL_LOGIN_FORM = {
     email: "",
     password: "",
@@ -51,5 +51,3 @@ const userService = () => {
 
   LOGIN_SUBMIT_BTN.addEventListener("click", form.onSubmit);
 };
-
-export default userService;

@@ -8,8 +8,9 @@ import {
   SIGNUP_PAGE_LINK,
 } from "../services/domService.js";
 import { onChangePage } from "./router.js";
-import pictureService from "./../pictures/services/pictureService.js";
-import userService from "./../users/services/userService.js";
+import { createPicture } from "./../pictures/services/pictureService.js";
+import { login } from "./../users/services/userService.js";
+
 /********* האזנה לאירועים **********/
 
 // ניתוב דפים
@@ -17,12 +18,12 @@ HOME_PAGE_LINK.addEventListener("click", () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener("click", () => onChangePage(PAGES.ABOUT));
 CREATE_PIC_PAGE_LINK.addEventListener("click", () => {
   onChangePage(PAGES.CREATE_PIC);
-  pictureService();
+  createPicture();
 });
 SIGNUP_PAGE_LINK.addEventListener("click", () => onChangePage(PAGES.SIGNUP));
 LOGIN_PAGE_LINK.addEventListener("click", () => {
   onChangePage(PAGES.LOGIN);
-  userService();
+  login();
 });
 RETURN_TO_HOME_PAGE_LINK.addEventListener("click", () =>
   onChangePage(PAGES.HOME)
