@@ -6,5 +6,6 @@ import initialData from "./initial-data/initialData.js";
 // import "./pictures/services/pictureService.js";
 // import userService from "./users/services/userService.js";
 
+// window.user = null
 window.pictures = initialData().pictures;
 renderSlider(pictures, 0);

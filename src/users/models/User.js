@@ -62,7 +62,7 @@ class User {
 
   checkPassword(password) {
     const regex = PASSWORD_REGEX;
-    const isExist = regex.test(password);
+    const isExist = password.match(regex);
     if (!isExist)
       throw new Error(
         "The password must contain at least one uppercase letter in English. One lowercase letter in English. Four numbers and one of the following special characters !@#$%^&*-"

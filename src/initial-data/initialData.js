@@ -27,57 +27,57 @@ const initialData = () => {
       },
     ],
     users: [
-      // {
-      //   email: "regular@gmail.com",
-      //   password: "Aa1234!",
-      //   address: {
-      //     state: "usa",
-      //     country: "new-york",
-      //     city: "new-york",
-      //     street: "broadway",
-      //     houseNumber: 5,
-      //     zip: 123456,
-      //   },
-      //   phone: "050-0000000",
-      //   name: {
-      //     first: "regular",
-      //     last: "user",
-      //   },
-      // },
-      // {
-      //   email: "business@gmail.com",
-      //   password: "Aa1234!",
-      //   address: {
-      //     state: "",
-      //     country: "israel",
-      //     city: "tel-aviv",
-      //     street: "shoham",
-      //     houseNumber: 5,
-      //     zip: 123456,
-      //   },
-      //   phone: "050-0000000",
-      //   name: {
-      //     first: "business",
-      //     last: "user",
-      //   },
-      // },
-      // {
-      //   email: "admin@gmail.com",
-      //   password: "Aa1234!",
-      //   address: {
-      //     state: "usa",
-      //     country: "new-york",
-      //     city: "new-york",
-      //     street: "broadway",
-      //     houseNumber: 5,
-      //     zip: 123456,
-      //   },
-      //   phone: "050-0000000",
-      //   name: {
-      //     first: "admin",
-      //     last: "user",
-      //   },
-      // },
+      {
+        email: "regular@gmail.com",
+        password: "Aa1234!",
+        address: {
+          state: "usa",
+          country: "new-york",
+          city: "new-york",
+          street: "broadway",
+          houseNumber: 5,
+          zip: 123456,
+        },
+        phone: "050-0000000",
+        name: {
+          first: "regular",
+          last: "user",
+        },
+      },
+      {
+        email: "business@gmail.com",
+        password: "Aa1234!",
+        address: {
+          state: "",
+          country: "israel",
+          city: "tel-aviv",
+          street: "shoham",
+          houseNumber: 5,
+          zip: 123456,
+        },
+        phone: "050-0000000",
+        name: {
+          first: "business",
+          last: "user",
+        },
+      },
+      {
+        email: "admin@gmail.com",
+        password: "Aa1234!",
+        address: {
+          state: "usa",
+          country: "new-york",
+          city: "new-york",
+          street: "broadway",
+          houseNumber: 5,
+          zip: 123456,
+        },
+        phone: "050-0000000",
+        name: {
+          first: "admin",
+          last: "user",
+        },
+      },
     ],
   };
 
@@ -86,10 +86,11 @@ const initialData = () => {
       return new Picture(picture, pictures);
     });
 
-    const users = null;
-    // const users = database.users.map(user => {
-    //   return new User(user, []);
-    // });
+    // const users = null;
+    const users = database.users.map(user => {
+      console.log(user);
+      return new User(user, []);
+    });
 
     return { pictures, users };
   } catch (error) {
