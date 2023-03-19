@@ -1,11 +1,18 @@
-export const onReset = (inputsElArray, errorsElArray, handleReset) => {
+export const onReset = (
+  inputsElArray,
+  errorsElArray,
+  submitBtn,
+  handleReset
+) => {
   handleReset();
   inputsElArray.map(input => {
     input.value = "";
+    input.removeEventListener("input", onInputChange);
   });
   errorsElArray.map(err => {
     err.innerHTML = "";
   });
+  submitBtn.setAttribute("disabled", "disabled");
 };
 
 export const onInputChange = (

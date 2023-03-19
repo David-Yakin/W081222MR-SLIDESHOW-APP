@@ -41,7 +41,7 @@ export const createPicture = () => {
     try {
       data.user_id = "123456";
       const pic = new Picture(data, pictures);
-      onReset(INPUTS_ARRAY, ERRORS_ARRAY, rest.handleReset);
+      onReset(INPUTS_ARRAY, ERRORS_ARRAY,CREATE_PIC_SUBMIT_BTN, rest.handleReset);
       pictures.push(pic);
       onChangePage(PAGES.HOME);
     } catch (error) {
@@ -66,6 +66,9 @@ export const createPicture = () => {
       rest.handleDisableSubmitBtn
     )
   );
+
+  // CREATE_PIC_URL_FIELD.removeEventListener("input", onInputChange);
+
   CREATE_PIC_ALT_FIELD.addEventListener("input", event =>
     onInputChange(
       event,
@@ -75,6 +78,7 @@ export const createPicture = () => {
       rest.handleDisableSubmitBtn
     )
   );
+
   CREATE_PIC_CREDITS_FIELD.addEventListener("input", event =>
     onInputChange(
       event,
@@ -95,7 +99,7 @@ export const createPicture = () => {
   );
 
   CREATE_PIC_CANCEL_BTN.addEventListener("click", () =>
-    onReset(INPUTS_ARRAY, ERRORS_ARRAY, rest.handleReset)
+    onReset(INPUTS_ARRAY, ERRORS_ARRAY, CREATE_PIC_SUBMIT_BTN, rest.handleReset)
   );
   CREATE_PIC_SUBMIT_BTN.addEventListener("click", rest.onSubmit);
 };

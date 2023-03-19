@@ -24,7 +24,20 @@ export const login = () => {
 
   const handleLoginSubmit = data => {
     console.log(data);
-    onReset(LOGIN_INPUTS_ARRAY, LOGIN_ERROR_ARRAY, form.handleReset);
+    // זיהוי אם יש משתמשים
+    // זיהוי המשתמש במערך המשתמשים
+    // אותנתיקציה של הסיסמה שהוזנה עם סיסמת המשתמש
+    // creating token - payload
+    // set token in localStorage
+    // set global variable user
+    // clear form field and errors
+    onReset(
+      LOGIN_INPUTS_ARRAY,
+      LOGIN_ERROR_ARRAY,
+      LOGIN_SUBMIT_BTN,
+      form.handleReset
+    );
+    // move to home page
   };
 
   const form = useForm(INITIAL_LOGIN_FORM, LOGIN_SCHEMA, handleLoginSubmit);
